@@ -14,7 +14,7 @@ wrap_users = {
     'v': 181585055,  # Viktor
 }
 
-@borg.on(NewMessage(outgoing=True, pattern='!!add wrap (?:(\w+)(?: (\d+))?)?'))
+@borg.on(NewMessage(outgoing=True, pattern='.add (?:(\w+)(?: (\d+))?)?'))
 async def add_user(event):
     rep = await event.get_reply_message
     nick = event.pattern_match.group(1)
